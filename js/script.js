@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cargar tema inicial
   if (themeManager.getCurrentTheme() === "dark") {
     document.body.setAttribute("data-theme", "dark");
-    themeToggle.textContent = "☀️";
+    
   }
 
   // Renderizar tareas
@@ -75,16 +75,19 @@ document.addEventListener("DOMContentLoaded", () => {
   
   cancelDeleteBtn.addEventListener("click", closeModal);
 
-  themeToggle.addEventListener("click", () => {
+// Establecer la imagen de fondo por defecto al cargar la página
+themeToggle.style.backgroundImage = "url('img/moon.svg')"; // Ruta al SVG de la luna
+
+themeToggle.addEventListener("click", () => {
     const newTheme = themeManager.toggleTheme();
     if (newTheme === "dark") {
-      document.body.setAttribute("data-theme", "dark");
-      themeToggle.textContent = "☀️";
+        document.body.setAttribute("data-theme", "dark");
+        themeToggle.style.backgroundImage = "url('img/sun.svg')"; // Cambia a la imagen del sol
     } else {
-      document.body.removeAttribute("data-theme");
-      themeToggle.textContent = "🌙";
+        document.body.removeAttribute("data-theme");
+        themeToggle.style.backgroundImage = "url('img/moon.svg')"; // Cambia a la imagen de la luna
     }
-  });
+});
 
   // Cerrar modal al hacer clic fuera
   modal.addEventListener("click", (e) => {

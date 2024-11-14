@@ -5,7 +5,7 @@
 }
 
 :root {
-    --bg-color: #f0f2f5;
+    -bg-color-: #f0f2f5;
     --text-color: #333;
     --item-bg: #fff;
     --shadow: rgba(0, 0, 0, 0.1);
@@ -40,7 +40,7 @@ nav {
     top: 0; 
     width: 100%; 
     display: flex;
-    justify-content:flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem; 
     background-color: var(--item-bg);
@@ -106,7 +106,9 @@ h1 {
 }
 
 #theme-toggle {
-    background: none;
+    background: var(--text-color);
+    width: 50px;
+    height: 50px;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
