@@ -76,17 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
   cancelDeleteBtn.addEventListener("click", closeModal);
 
 // Establecer la imagen de fondo por defecto al cargar la página
-themeToggle.style.backgroundImage = "url('img/moon.svg')";
 
 themeToggle.addEventListener("click", () => {
-    const newTheme = themeManager.toggleTheme();
-    if (newTheme === "dark") {
-        document.body.setAttribute("data-theme", "dark");
-        themeToggle.style.backgroundImage = "url('img/sun.svg')"; 
-    } else {
-        document.body.removeAttribute("data-theme");
-        themeToggle.style.backgroundImage = "url('img/moon.svg')"; 
-    }
+  const newTheme = themeManager.toggleTheme();
+  if (newTheme === "dark") {
+      document.body.setAttribute("data-theme", "dark");
+      themeToggle.textContent = "☀️"; // Cambiado de imagen a texto
+  } else {
+      document.body.removeAttribute("data-theme");
+      themeToggle.textContent = "🌙"; // Cambiado de imagen a texto
+  }
 });
 
   // Cerrar modal al hacer clic fuera
