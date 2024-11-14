@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>¿Qué tengo que hacer?</h1>
+        </header>
+        <div class="card main-card">
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Nueva tarea..." required>
+                <div id="todo-controls">
+                     <button type="submit">Añadir tarea</button>
+                    <button id="clear-all">Borrar todas</button>
+                </div>
+               
+            </form>
+
+            
+
+            <ul id="todo-list"></ul>
+        </>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="confirm-modal" class="modal">
+        <div class="modal-content card">
+            <h2>¿Estás seguro?</h2>
+            <p>¿Realmente deseas eliminar todas las tareas?</p>
+            <div class="modal-buttons">
+                <button id="confirm-delete" class="delete-btn">Sí, borrar todo</button>
+                <button id="cancel-delete">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
