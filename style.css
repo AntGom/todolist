@@ -32,7 +32,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
     height: 100vh;
     width: auto;
-    font-size: 16px; /* Aumentar el tamaño de fuente base */
+    font-size: 16px; 
 }
 
 nav {
@@ -48,9 +48,6 @@ nav {
     transition: background-color 0.3s; 
 }
 
-nav:hover {
-    background-color: rgba(255, 255, 255, 0.8); 
-}
 
 nav a {
     color: var(--text-color); 
@@ -143,7 +140,7 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 0.9rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Añadir sombra para profundidad */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
 #todo-form button,
@@ -159,7 +156,7 @@ button {
 
 button:hover {
     background-color: var(--button-hover);
-    transform: translateY(-4px); /* Aumentar el desplazamiento al pasar el ratón */
+    transform: translateY(-4px); 
 }
 
 .todo-controls {
@@ -182,11 +179,11 @@ button:hover {
     display: flex;
     align-items: center;
     padding: 1rem;
-    background-color: var(--item-bg); /* Cambiado a var(--item-bg) */
+    background-color: var(--item-bg); 
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--shadow);
     transition: all 0.3s ease;
-    border: 1px solid var(--card-border); /* Añadir borde para definición */
+    border: 1px solid var(--card-border); 
 }
 
 .todo-item:hover {

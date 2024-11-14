@@ -76,16 +76,16 @@ document.addEventListener("DOMContentLoaded", () => {
   cancelDeleteBtn.addEventListener("click", closeModal);
 
 // Establecer la imagen de fondo por defecto al cargar la página
-themeToggle.style.backgroundImage = "url('img/moon.svg')"; // Ruta al SVG de la luna
+themeToggle.style.backgroundImage = "url('img/moon.svg')";
 
 themeToggle.addEventListener("click", () => {
     const newTheme = themeManager.toggleTheme();
     if (newTheme === "dark") {
         document.body.setAttribute("data-theme", "dark");
-        themeToggle.style.backgroundImage = "url('img/sun.svg')"; // Cambia a la imagen del sol
+        themeToggle.style.backgroundImage = "url('img/sun.svg')"; 
     } else {
         document.body.removeAttribute("data-theme");
-        themeToggle.style.backgroundImage = "url('img/moon.svg')"; // Cambia a la imagen de la luna
+        themeToggle.style.backgroundImage = "url('img/moon.svg')"; 
     }
 });
 
