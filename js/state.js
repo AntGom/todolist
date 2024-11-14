@@ -2,7 +2,7 @@ let todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 // Gestión del tema
 const themeManager = {
-    getCurrentTheme: () => localStorage.getItem('theme') || 'light',
+    getCurrentTheme: () => localStorage.getItem('theme') || 'dark',
     setTheme: (theme) => localStorage.setItem('theme', theme),
     toggleTheme: () => {
         const currentTheme = themeManager.getCurrentTheme();
