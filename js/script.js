@@ -13,10 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Cargar tema inicial
   if (themeManager.getCurrentTheme() === "dark") {
     document.body.setAttribute("data-theme", "dark");
-    
   }
 
-  // Renderizar tareas
+  // Pintar las tareas
   function renderTodos() {
     todoList.innerHTML = "";
     todoManager.getTodos().forEach((todo, index) => {
@@ -29,12 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <button class="delete-btn">🗑️</button>
       `;
 
+      //Marcar tareas completadas
       const checkbox = li.querySelector("input");
       checkbox.addEventListener("change", () => {
         todoManager.toggleTodo(index);
         renderTodos();
       });
 
+      //Eliminar tarea
       const deleteBtn = li.querySelector(".delete-btn");
       deleteBtn.addEventListener("click", () => {
         todoManager.deleteTodo(index);
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showModal() {
     modal.classList.add("show");
   }
-  
+
   function closeModal() {
     modal.classList.remove("show");
   }
@@ -66,27 +67,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   clearAllBtn.addEventListener("click", showModal);
-  
+
   confirmDeleteBtn.addEventListener("click", () => {
     todoManager.clearAllTodos();
     renderTodos();
     closeModal();
   });
-  
+
   cancelDeleteBtn.addEventListener("click", closeModal);
 
-// Establecer la imagen de fondo por defecto al cargar la página
-
-themeToggle.addEventListener("click", () => {
-  const newTheme = themeManager.toggleTheme();
-  if (newTheme === "dark") {
+  themeToggle.addEventListener("click", () => {
+    const newTheme = themeManager.toggleTheme();
+    if (newTheme === "dark") {
       document.body.setAttribute("data-theme", "dark");
-      themeToggle.textContent = "☀️"; // Cambiado de imagen a texto
-  } else {
+      themeToggle.textContent = "☀️";
+    } else {
       document.body.removeAttribute("data-theme");
-      themeToggle.textContent = "🌙"; // Cambiado de imagen a texto
-  }
-});
+      themeToggle.textContent = "🌙";
+    }
+  });
 
   // Cerrar modal al hacer clic fuera
   modal.addEventListener("click", (e) => {
@@ -95,6 +94,5 @@ themeToggle.addEventListener("click", () => {
     }
   });
 
-  // Renderizar tareas iniciales
   renderTodos();
 });
